@@ -4,6 +4,8 @@ Script Purpose:
     This stored procedure loads data into the 'bronze' schema from external CSV files. 
    
 */
+CREATE OR ALTER PROCEDURE bronze.load_bronze AS
+BEGIN
 
 TRUNCATE TABLE bronze.crm_cust_info
 BULK INSERT bronze.crm_cust_info
@@ -70,3 +72,4 @@ TRUNCATE TABLE bronze.erp_px_cat_g1v2;
 			FIELDTERMINATOR = ',',
 			TABLOCK
 		);
+END
